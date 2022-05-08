@@ -1,3 +1,4 @@
+import { Link ,NavLink  } from 'react-router-dom';
 import './navbar.css'
 
 function Navbar(){
@@ -9,13 +10,13 @@ function Navbar(){
             </h1>
             <ul className='navbar__list'>
                 <li className='navbar__list-item'>
-                    <a className='navbar__list-link active' href="#">Home</a>
+                    <NavLink to='/' className='navbar__list-link ' activeClassName ="active">Home</NavLink>
                 </li>
                 <li className='navbar__list-item'>
-                    <a className='navbar__list-link' href="#">About</a>
+                    <NavLink to='/about' className='navbar__list-link' activeClassName ="active">About</NavLink>
                 </li>
                 <li className='navbar__list-item'>
-                    <a className='navbar__list-link' href="#">New Blog</a>
+                    <NavLink to='/XO' className='navbar__list-link' activeClassName ="active">XO</NavLink>
                 </li>
             </ul>
         </nav>

@@ -2,6 +2,7 @@ import './App.css';
 import HomePage from "./Home.js";
 import Navbar from './navbar.js' 
 import About from "./About.js";
+import XO from "./XO/XO.js";
 import {BrowserRouter ,Route ,Routes ,Link} from "react-router-dom";
 // import { Route } from 'react-router';
 
@@ -19,6 +20,7 @@ function App() {
             <Route path='/' exact element={<HomePage/>}></Route>
             <Route path='/about' element={<About/>}></Route>
             <Route path='/113312' element={<HomePage/>}/>
+            <Route path='/XO' element={<XO/>}/>
           </Routes>
           </div>
         </div>
