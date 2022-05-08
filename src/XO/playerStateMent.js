@@ -3,7 +3,7 @@ function playerStateMent(props){
     const player = props.player
     console.log(player)
     return (
-        <div  className={'XO-player  XO-player-'+player}>
+        <div  className='XO-player'>
             Player: {player}
             <div>
                 { 

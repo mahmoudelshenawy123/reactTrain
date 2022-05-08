@@ -56,7 +56,6 @@ function XO(){
                 if((newGameSheet[val[0]].whoseChecked === newGameSheet[val[1]].whoseChecked )&&( newGameSheet[val[1]].whoseChecked === newGameSheet[val[2]].whoseChecked )){
                     setGameState(newGameSheet[val[0]].whoseChecked =='x' ?2 :3);
                     diableRestGame(true)
-                    
                 }
             }
         })
@@ -87,8 +86,8 @@ function XO(){
     return(
         <div className='XO-container'>
             <h1>React - Tic Tac Toe</h1>
-                <CheckGameState gameState ={gameState} currentTurn={currentTurn}/>
-                <ResetGame diableRestGame ={diableRestGame}/>
+            <CheckGameState gameState ={gameState} currentTurn={currentTurn}/>
+            <ResetGame diableRestGame ={diableRestGame}/>
             <div className="game-container">
                 {
                     <PlayerStateMent player='x' playerMoves ={playerMoves}/>
@@ -107,5 +106,4 @@ function XO(){
         </div>        
     )
 }
-
 export default XO;

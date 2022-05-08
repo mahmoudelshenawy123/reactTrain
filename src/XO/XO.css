@@ -15,6 +15,7 @@
     grid-template-columns: repeat(3,1fr);
     width: 210px;
     color: #000;
+    margin: 0px 10px;
 }
 .react-grid__item{
     height: 70px;
