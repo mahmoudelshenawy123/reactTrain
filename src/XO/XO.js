@@ -4,7 +4,7 @@ import XOGridElement from './XOGridElement.js'
 import PlayerStateMent from './playerStateMent.js'
 import CheckGameState from './checkGameState.js'
 import ResetGame from './resetGame.js'
-import {useState} from 'react'
+import {useState ,useEffect} from 'react'
 function XO(){
     const gameSheetConst = [
         {id:0,checked:false ,whoseChecked:null},
@@ -27,18 +27,15 @@ function XO(){
 
     const changeCurrentTurn =(gridNUmber,e)=>{
         let currentTurnVar = currentTurn === true ? 'x' :'o'
-        setCurrentTurn(!currentTurn)
+        setCurrentTurn(prevState=>!prevState)
         finishGame(gridNUmber ,currentTurnVar)
         PlayerMove(gridNUmber ,currentTurnVar)
         e.target.setAttribute('disabled',true)
-        
         e.target.textContent = currentTurnVar
     }
 
     const PlayerMove=(gridNUmber ,currentTurnVar)=>{
-        let playerMove=playerMoves;
-        playerMove.push({place:gridNUmber ,player:currentTurnVar})
-        setPlayerMoves(playerMove)
+        setPlayerMoves([...playerMoves,{place:gridNUmber ,player:currentTurnVar}])
     }
 
     const finishGame =(gridNUmber ,currentTurnVar)=>{
@@ -54,25 +51,25 @@ function XO(){
         winingCases.forEach(val=>{
             if(newGameSheet[val[0]].whoseChecked!=null){
                 if((newGameSheet[val[0]].whoseChecked === newGameSheet[val[1]].whoseChecked )&&( newGameSheet[val[1]].whoseChecked === newGameSheet[val[2]].whoseChecked )){
-                    setGameState(newGameSheet[val[0]].whoseChecked =='x' ?2 :3);
-                    diableRestGame(true)
+                    setGameState(newGameSheet[val[0]].whoseChecked ==='x' ?2 :3);
+                    diableRestGame(true)                    
+                }else{
+                    let restCheckes = gameSheet.filter(val=>{
+                        return !val.checked 
+                    })
+                    restCheckes.length===0 && setGameState(1)
                 }
             }
         })
-        let restCheckes = gameSheet.filter(val=>{
-            return !val.checked 
-        })
-        
-        restCheckes.length==0&& setGameState(1)
     }
 
     const diableRestGame = (state)=>{
         let gamingBoxes = document.querySelectorAll('.react-grid__item')
         gamingBoxes.forEach(val=>{
-            if(state ==true){
+            if(state === true){
                 val.setAttribute('disabled' ,state)
             }
-            if(state ==false){
+            if(state === false){
                 val.removeAttribute('disabled')
                 val.textContent =''
                 setGameSheet(gameSheetConst)
@@ -82,7 +79,9 @@ function XO(){
             }
         })
     }
-
+    useEffect(()=>{
+        console.log('use Effect')
+    },[currentTurn])
     return(
         <div className='XO-container'>
             <h1>React - Tic Tac Toe</h1>

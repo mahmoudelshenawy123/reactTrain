@@ -1,4 +1,4 @@
-import { Link ,NavLink  } from 'react-router-dom';
+import { NavLink  } from 'react-router-dom';
 import './navbar.css'
 
 function Navbar(){
@@ -10,13 +10,25 @@ function Navbar(){
             </h1>
             <ul className='navbar__list'>
                 <li className='navbar__list-item'>
-                    <NavLink to='/' className='navbar__list-link ' activeClassName ="active">Home</NavLink>
+                    <NavLink to='/' className='navbar__list-link ' activeclassname ="active">Home</NavLink>
                 </li>
                 <li className='navbar__list-item'>
-                    <NavLink to='/about' className='navbar__list-link' activeClassName ="active">About</NavLink>
+                    <NavLink to='/about' className='navbar__list-link' activeclassname ="active">About</NavLink>
                 </li>
                 <li className='navbar__list-item'>
-                    <NavLink to='/XO' className='navbar__list-link' activeClassName ="active">XO</NavLink>
+                    <NavLink to='/XO' className='navbar__list-link' activeclassname ="active">XO</NavLink>
+                </li>
+                <li className='navbar__list-item'>
+                    <NavLink to='/fileUpload' className='navbar__list-link' activeclassname ="active">fileUpload</NavLink>
+                </li>
+                <li className='navbar__list-item'>
+                    <NavLink to='/Classcomponent' className='navbar__list-link' activeclassname ="active">Classcomponent</NavLink>
+                </li>
+                <li className='navbar__list-item'>
+                    <NavLink to='/UsersDetails' className='navbar__list-link' activeclassname ="active">UsersDetails</NavLink>
+                </li>
+                <li className='navbar__list-item'>
+                    <NavLink to='/Profile' className='navbar__list-link' activeclassname ="active">Profile</NavLink>
                 </li>
             </ul>
         </nav>

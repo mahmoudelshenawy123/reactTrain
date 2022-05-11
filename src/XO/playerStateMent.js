@@ -1,7 +1,6 @@
 function playerStateMent(props){
     const playerMovess = props.playerMoves;
     const player = props.player
-    console.log(player)
     return (
         <div  className='XO-player'>
             Player: {player}
