@@ -11,7 +11,10 @@ import New from "./New.js";
 import Feature from "./Feature.js";
 import UsersDetails from "./UsersDetails.js";
 import Error from "./Error.js";
+import Classs from "./classs.js";
 import Profile from "./Profile.js";
+import FormSubmit from "./FormSubmit.js";
+import Counter from "./Counter.js";
 import {BrowserRouter ,Route ,Routes ,Link} from "react-router-dom";
 const LazyAbout = React.lazy(()=>import('./About'))
 
@@ -38,6 +41,9 @@ function App() {
                 <Route path='/XO' element={<XO/>}/>
                 <Route path='/fileUpload' element={<FileUpload/>}/>
                 <Route path='/Profile' element={<Profile/>}/>
+                <Route path='/Classs' element={<Classs/>}/>
+                <Route path='/FormSubmit' element={<FormSubmit/>}/>
+                <Route path='/Counter' element={<Counter/>}/>
                 <Route path='/UsersDetails/:id' element={<UsersDetails/>}/>
                 <Route path='/Classcomponent' element={<Classcomponent/>}>
                   <Route index element ={<New/>}/>

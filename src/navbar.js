@@ -30,6 +30,15 @@ function Navbar(){
                 <li className='navbar__list-item'>
                     <NavLink to='/Profile' className='navbar__list-link' activeclassname ="active">Profile</NavLink>
                 </li>
+                <li className='navbar__list-item'>
+                    <NavLink to='/Classs' className='navbar__list-link' activeclassname ="active">Classs</NavLink>
+                </li>
+                <li className='navbar__list-item'>
+                    <NavLink to='/Counter' className='navbar__list-link' activeclassname ="active">Counter</NavLink>
+                </li>
+                <li className='navbar__list-item'>
+                    <NavLink to='/FormSubmit' className='navbar__list-link' activeclassname ="active">FormSubmit</NavLink>
+                </li>
             </ul>
         </nav>
     )
